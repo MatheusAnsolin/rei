@@ -1,16 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-// Importando os componentes standalone
-import { CatalogoComponent } from './pages/catalogo/catalogo.component';
-import { LoginComponent } from './pages/login/login.component';
-import { DetalheProdutoComponent } from './pages/detalhe-produto/detalhe-produto.component';
+import { Routes } from '@angular/router';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'catalogo', pathMatch: 'full' }, // rota padrão
-  { path: 'catalogo', component: CatalogoComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'detalhes/:id', component: DetalheProdutoComponent }, // id do produto na URL
-  { path: '**', redirectTo: 'catalogo' }, // rota fallback
+  {
+    path: 'products', // O caminho na URL
+    component: ProductListComponent // O componente a ser carregado
+  },
+  {
+    path: '', // Rota padrão (URL raiz)
+    redirectTo: '/products', // Redireciona para a rota de produtos
+    pathMatch: 'full' // Exige que o caminho seja exatamente vazio para redirecionar
+  }
 ];
-

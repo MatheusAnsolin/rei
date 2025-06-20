@@ -1,0 +1,67 @@
+.page-container {
+  padding: 0 20px;
+}
+
+.category-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+}
+
+.products-scroll-container {
+  display: flex;
+  overflow-x: auto; /* A mágica do scroll lateral acontece aqui */
+  padding-bottom: 16px; /* Espaço para a barra de rolagem não cortar os cards */
+  gap: 16px; /* Espaço entre os cards */
+}
+
+/* Esconde a barra de rolagem em navegadores WebKit (Chrome, Safari) */
+/* Substitua o bloco .products-scroll-container::-webkit-scrollbar antigo por este */
+
+/* Estiliza a barra de rolagem para navegadores WebKit (Chrome, Safari, Edge) */
+.products-scroll-container::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem horizontal */
+}
+
+/* Estiliza o "caminho" por onde a barra corre */
+.products-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Uma cor de fundo bem clara */
+  border-radius: 10px;
+}
+
+/* Estiliza o "polegar" (a parte que você arrasta) */
+.products-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--border-color); /* Usando nossa variável de cor de borda */
+  border-radius: 10px;
+}
+
+/* Efeito ao passar o mouse sobre o polegar */
+.products-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color); /* Usando nossa cor primária no hover */
+}
+
+.product-card-horizontal {
+  flex: 0 0 180px; /* Não encolhe, não estica, base de 180px de largura */
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.product-card-horizontal:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+.product-card-horizontal p {
+  margin: 0;
+  white-space: normal; /* Permite que o texto quebre a linha dentro do card */
+}
+
+.item-name {
+  margin-bottom: 8px !important;
+}
