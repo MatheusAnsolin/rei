@@ -1,0 +1,29 @@
+.main-footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  position: fixed; /* Fixa o footer na base */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-medium-gray);
+}
+
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+.nav-text {
+  font-size: 12pt;
+}

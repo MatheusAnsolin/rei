@@ -10,11 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent {
-  produtos = [
-    { id: 1, nome: 'Camiseta Angular', preco: 79.9 },
-    { id: 2, nome: 'Caneca Typescript', preco: 49.9 },
-    { id: 3, nome: 'Boné Dev', preco: 59.9 }
-  ];
+
 
   constructor(private router: Router) {}
 

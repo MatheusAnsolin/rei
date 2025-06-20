@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Copos",
+      "name": "Copo 200ml",
+      "price": 8.00,
+      "description": "Dois acompanhamentos"
+    },
+    {
+      "id": 2,
+      "category": "Copos",
+      "name": "Copo 300ml",
+      "price": 8.00,
+      "description": "Três acompanhamentos"
+    },
+    {
+      "id": 3,
+      "category": "Barcas",
+      "name": "Barca 500g",
+      "price": 16.00,
+      "description": "até quatro acompanhamentos"
+    }
+  ],
+  "syrups": [
+    { "id": 1, "name": "Açaí" },
+    { "id": 2, "name": "Caramelo" },
+    { "id": 3, "name": "Chocolate" },
+    { "id": 4, "name": "Leite condensado" },
+    { "id": 5, "name": "Limão" },
+    { "id": 6, "name": "Menta" },
+    { "id": 7, "name": "Morango" },
+    { "id": 8, "name": "Uva" }
+  ]
+}

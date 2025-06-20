@@ -1,0 +1,16 @@
+.main-header {
+  background-color: var(--primary-color);
+  color: var(--action-color-text); /* Texto branco */
+  padding: 10px 20px;
+  position: fixed; /* Fixa o header no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 20pt;
+}

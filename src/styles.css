@@ -1,4 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+/* Guia de Estilos Global - Rei do Açaí */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* 1. Definição das Variáveis (Custom Properties) na Raiz do Documento */
+:root {
+  /* Paleta de Cores */
+  --primary-color: #8e24aa; /* Roxo do logo */
+  --action-color: #6A1B9A; /* Roxo mais escuro para botões */
+  --action-color-text: #FFFFFF; /* Texto branco para botões */
+
+  /* Cores de Texto */
+  --text-dark-gray: #333333;
+  --text-medium-gray: #757575;
+
+  /* Cores de Fundo e Bordas */
+  --background-color: #fcfcfc;
+  --border-color: #E0E0E0;
+
+  /* Fontes */
+  --font-family-base: 'Helvetica', 'Arial', sans-serif; /* Use a fonte que preferir */
+}
+
+/* 2. Estilos de Base e Resets */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+  color: var(--text-dark-gray);
+  background-color: var(--background-color);
+}
+
+/* 3. Classes de Tipografia Baseadas nas Recomendações */
+.screen-title {
+  font-size: 24pt;
+  font-weight: bold;
+  color: var(--text-dark-gray);
+}
+
+.section-title {
+  font-size: 20pt;
+  font-weight: bold;
+  color: var(--text-dark-gray);
+}
+
+.item-name {
+  font-size: 16pt;
+  font-weight: 500; /* Equivalente a 'Medium' */
+  color: var(--text-dark-gray);
+}
+
+.support-text {
+  font-size: 14pt;
+  font-weight: 400; /* Equivalente a 'Regular' */
+  color: var(--text-medium-gray);
+}

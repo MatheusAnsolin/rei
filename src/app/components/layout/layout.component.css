@@ -1,0 +1,6 @@
+.content {
+  /* Adiciona padding no topo e na base com um pouco de folga */
+  /* Os valores exatos podem ser ajustados depois */
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
