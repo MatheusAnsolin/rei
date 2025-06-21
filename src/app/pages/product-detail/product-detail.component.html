@@ -4,6 +4,10 @@
     <p class="support-text">{{ product.description }}</p>
     <p class="item-name price">R$ {{ product.price.toFixed(2) }}</p>
 
-    <button class="add-to-cart-btn">Personalizar e Adicionar</button>
+    <a [routerLink]="['/customize', product.id]" class="add-to-cart-btn">
+      Personalizar e Adicionar
+      <button class="add-to-cart-btn">Personalizar e Adicionar</button>
+    </a>
+
   </div>
 </div>

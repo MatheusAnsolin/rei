@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
       this.products = data;
       console.log('Produtos carregados = ', this.products);
     });
-      throw new Error('Method not implemented.');
+      //throw new Error('Method not implemented.');
   }
 
   title = 'rei-do-acai';

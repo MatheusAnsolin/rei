@@ -1,0 +1,69 @@
+.page-container {
+  padding: 20px;
+  padding-bottom: 120px; /* Espaço para a barra de total não sobrepor o conteúdo */
+}
+
+.option-section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantity-btn, .select-btn {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.summary-bar {
+  position: fixed;
+  bottom: 80px; /* Acima do footer */
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid var(--border-color);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+.confirm-btn {
+  background-color: var(--action-color);
+  color: var(--action-color-text);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14pt;
+  cursor: pointer;
+}

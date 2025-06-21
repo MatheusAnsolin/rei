@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router'; // Importante para ler a URL
+import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product.interface';
 import { ProductService } from '../../services/product.service';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })

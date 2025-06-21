@@ -1,0 +1,62 @@
+<div *ngIf="isLoading" class="loading">Carregando...</div>
+
+<div *ngIf="!isLoading && product" class="page-container">
+  <h1 class="screen-title">{{ product.name }}</h1>
+
+  <nav class="tabs-nav">
+    <button class="tab-btn" [class.active]="activeTab === 'caldas'" (click)="changeTab('caldas')">
+      Caldas ({{ selectedCalda ? 1 : 0 }}/1)
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'extras'" (click)="changeTab('extras')">
+      Extras ({{ totalExtras }}/2)
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'acompanhamentos'" (click)="changeTab('acompanhamentos')">
+      Acompanhamentos ({{ totalAcompanhamentos }}/2)
+    </button>
+  </nav>
+
+  <div class="tabs-content">
+    <section *ngIf="activeTab === 'caldas'" class="option-section">
+      <div class="option-list">
+        <div class="option-item" *ngFor="let calda of allCaldas">
+          <span>{{ calda.name }}</span>
+          <button class="select-btn" [class.selected]="selectedCalda?.id === calda.id" (click)="selectCalda(calda)">
+            {{ selectedCalda?.id === calda.id ? '✓' : '+' }}
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section *ngIf="activeTab === 'extras'" class="option-section">
+      <div class="option-list">
+        <div class="option-item" *ngFor="let extra of allExtras">
+          <span>{{ extra.name }} <small>(R$ {{ extra.price.toFixed(2) }})</small></span>
+          <div class="quantity-selector">
+            <button class="quantity-btn" (click)="removeExtra(extra)">-</button>
+            <span>{{ getExtraQuantity(extra.id) }}</span>
+            <button class="quantity-btn" (click)="addExtra(extra)">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section *ngIf="activeTab === 'acompanhamentos'" class="option-section">
+      <div class="option-list">
+        <div class="option-item" *ngFor="let item of allAcompanhamentos">
+          <span>{{ item.name }}</span>
+          <div class="quantity-selector">
+            <button class="quantity-btn" (click)="removeAcompanhamento(item)">-</button>
+            <span>{{ getAcompanhamentoQuantity(item.id) }}</span>
+            <button class="quantity-btn" (click)="addAcompanhamento(item)">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div *ngIf="product" class="summary-bar">
+  <span>Total</span>
+  <span class="total-price">R$ {{ totalPrice.toFixed(2) }}</span>
+  <button class="confirm-btn">Confirmar</button>
+</div>
