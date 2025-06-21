@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.interface';
+import { RouterModule } from '@angular/router';
 
 // Interface para nossa nova estrutura de dados agrupada
 export interface ProductGroup {
@@ -12,7 +13,7 @@ export interface ProductGroup {
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })

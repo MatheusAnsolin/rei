@@ -1,0 +1,24 @@
+.page-container {
+  padding: 0 20px;
+}
+
+.price {
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.add-to-cart-btn {
+  background-color: var(--action-color);
+  color: var(--action-color-text);
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  font-size: 16pt;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.9;
+}

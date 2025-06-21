@@ -1,14 +1,19 @@
 import { Routes } from '@angular/router';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 export const routes: Routes = [
   {
-    path: 'products', // O caminho na URL
-    component: ProductListComponent // O componente a ser carregado
+    path: 'products',
+    component: ProductListComponent
   },
   {
-    path: '', // Rota padrão (URL raiz)
-    redirectTo: '/products', // Redireciona para a rota de produtos
+    path: 'product/:id',
+    component: ProductDetailComponent
+  },
+  {
+    path: '',
+    redirectTo: '/products',
     pathMatch: 'full' // Exige que o caminho seja exatamente vazio para redirecionar
   }
 ];

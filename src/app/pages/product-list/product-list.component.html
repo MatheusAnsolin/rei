@@ -3,10 +3,10 @@
     <h2 class="section-title">{{ group.category }}</h2>
 
     <div class="products-scroll-container">
-      <div class="product-card-horizontal" *ngFor="let product of group.products">
+      <a class="product-card-horizontal" *ngFor="let product of group.products" [routerLink]="['/product', product.id]">
         <p class="item-name">{{ product.name }}</p>
         <p class="support-text">R$ {{ product.price.toFixed(2) }}</p>
-      </div>
+      </a>
     </div>
   </section>
 </div>
