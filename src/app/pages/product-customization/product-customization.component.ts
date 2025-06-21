@@ -5,6 +5,9 @@ import { forkJoin } from 'rxjs'; // Usaremos para fazer várias chamadas de API
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.interface';
 import { Topping, Extra } from '../../models/topping.interface';
+import { CartService } from '../../services/cart.service';
+import { CartItem } from '../../models/cart-item.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-customization',
@@ -27,9 +30,10 @@ export class ProductCustomizationComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
-  ) {
-  }
+    private productService: ProductService,
+    private cartService: CartService, // Injetar o serviço de carrinho
+    private router: Router // Injetar o roteador para navegar
+  ) {}
 
   ngOnInit(): void {
     const idString = this.route.snapshot.paramMap.get('id');
@@ -63,17 +67,18 @@ export class ProductCustomizationComponent implements OnInit {
   }
 
 // --- LÓGICA PARA CALDAS ---
+
   selectCalda(calda: Topping): void {
     // Se a calda clicada já é a selecionada, desmarque-a. Senão, selecione-a.
     this.selectedCalda = this.selectedCalda?.id === calda.id ? null : calda;
     // Para melhorar a experiência, muda para a próxima aba após a seleção
-    if (this.selectedCalda) {
-      this.changeTab('extras');
-    }
   }
 
 // --- LÓGICA PARA EXTRAS ---
   addExtra(extra: Extra): void {
+    if (this.totalItemsSelecionados >= this.product!.limit || this.getExtraQuantity(extra.id) >= 2) {
+      return;
+    }
     const existing = this.selectedExtras.get(extra.id);
     if (existing) {
       existing.quantity++;
@@ -98,6 +103,9 @@ export class ProductCustomizationComponent implements OnInit {
 
 // --- LÓGICA PARA ACOMPANHAMENTOS (similar aos extras) ---
   addAcompanhamento(topping: Topping): void {
+    if (this.totalItemsSelecionados >= this.product!.limit || this.getAcompanhamentoQuantity(topping.id) >= 2) {
+      return;
+    }
     const existing = this.selectedAcompanhamentos.get(topping.id);
     if (existing) {
       existing.quantity++;
@@ -138,4 +146,26 @@ export class ProductCustomizationComponent implements OnInit {
 
     return this.product.price + extrasPrice;
   }
+  get totalItemsSelecionados(): number {
+    return this.totalExtras + this.totalAcompanhamentos;
+  }
+  confirmarProduto(): void {
+    if (!this.product) return;
+
+    // 1. Monta o objeto do item do carrinho com as seleções atuais
+    const cartItem: CartItem = {
+      product: this.product,
+      selectedCalda: this.selectedCalda,
+      selectedExtras: this.selectedExtras,
+      selectedAcompanhamentos: this.selectedAcompanhamentos,
+      totalPrice: this.totalPrice
+    };
+
+    // 2. Adiciona o item ao serviço do carrinho
+    this.cartService.addToCart(cartItem);
+
+    // 3. Navega para a próxima tela (que vamos criar agora)
+    this.router.navigate(['/checkout']);
+  }
+
 }

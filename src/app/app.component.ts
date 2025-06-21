@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ProductService } from './services/product.service';
 import { Product } from './models/product.interface';
-import {LayoutComponent} from './components/layout/layout.component';
-
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,6 @@ import {LayoutComponent} from './components/layout/layout.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    LayoutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

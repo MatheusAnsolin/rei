@@ -34,10 +34,12 @@
           <div class="quantity-selector">
             <button class="quantity-btn" (click)="removeExtra(extra)">-</button>
             <span>{{ getExtraQuantity(extra.id) }}</span>
-            <button class="quantity-btn" (click)="addExtra(extra)">+</button>
+            <button class="quantity-btn" (click)="addExtra(extra)"
+                    [disabled]="totalItemsSelecionados >= product.limit || getExtraQuantity(extra.id) >= 2">+</button>
           </div>
         </div>
       </div>
+
     </section>
 
     <section *ngIf="activeTab === 'acompanhamentos'" class="option-section">
@@ -47,7 +49,8 @@
           <div class="quantity-selector">
             <button class="quantity-btn" (click)="removeAcompanhamento(item)">-</button>
             <span>{{ getAcompanhamentoQuantity(item.id) }}</span>
-            <button class="quantity-btn" (click)="addAcompanhamento(item)">+</button>
+            <button class="quantity-btn" (click)="addAcompanhamento(item)"
+                    [disabled]="totalItemsSelecionados >= product.limit || getAcompanhamentoQuantity(item.id) >= 2">+</button>
           </div>
         </div>
       </div>
@@ -58,5 +61,5 @@
 <div *ngIf="product" class="summary-bar">
   <span>Total</span>
   <span class="total-price">R$ {{ totalPrice.toFixed(2) }}</span>
-  <button class="confirm-btn">Confirmar</button>
+  <button class="confirm-btn" (click)="confirmarProduto()">Confirmar</button>
 </div>

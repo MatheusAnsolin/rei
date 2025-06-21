@@ -1,9 +1,9 @@
 {
   "products": [
-    { "id": 1, "category": "Copos", "name": "Copo 200ml", "price": 8.00, "description": "Dois acompanhamentos" },
-    { "id": 2, "category": "Copos", "name": "Copo 300ml", "price": 8.00, "description": "Três acompanhamentos" },
-    { "id": 3, "category": "Barcas", "name": "Barca 500g", "price": 16.00, "description": "até quatro acompanhamentos" }
-  ],
+  { "id": 1, "category": "Copos", "name": "Copo 200ml", "price": 8.00, "description": "Dois acompanhamentos", "limit": 2 },
+  { "id": 2, "category": "Copos", "name": "Copo 300ml", "price": 8.00, "description": "Três acompanhamentos", "limit": 3 },
+  { "id": 3, "category": "Barcas", "name": "Barca 500g", "price": 16.00, "description": "até quatro acompanhamentos", "limit": 4 }
+],
   "caldas": [
     { "id": 1, "name": "Açaí" },
     { "id": 2, "name": "Caramelo" },

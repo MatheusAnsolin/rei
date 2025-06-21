@@ -67,3 +67,32 @@
   font-size: 14pt;
   cursor: pointer;
 }
+
+.tabs-nav {
+  display: flex;
+  /* Remova o gap e a borda inferior daqui */
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1; /* Faz cada botão ocupar o mesmo espaço */
+  border: none;
+  border-bottom: 3px solid var(--border-color); /* Borda cinza para inativos */
+  background: transparent;
+  padding: 16px 8px; /* Aumenta o padding vertical */
+  font-size: 13pt; /* Leve ajuste de fonte */
+  cursor: pointer;
+  color: var(--text-medium-gray);
+  /* Remova a borda extra do .active daqui */
+}
+
+.tab-btn.active {
+  border-bottom-color: var(--primary-color);
+  color: var(--text-dark-gray);
+  font-weight: bold;
+}
+.option-item.selected-item {
+  background-color: #f3e5f5; /* Um roxo bem clarinho */
+  border-radius: 8px;
+}

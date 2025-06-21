@@ -1,0 +1,51 @@
+<div class="page-container">
+  <h1 class="screen-title">Finalizar pedido</h1>
+
+  <section>
+    <h2 class="section-title">Resumo do pedido</h2>
+
+    <div class="cart-items-list" *ngIf="(cartItems$ | async) as items">
+      <div class="cart-item-card" *ngFor="let item of items">
+        <p class="item-name">{{ item.product.name }}</p>
+        <div class="item-details">
+          <p *ngIf="item.selectedCalda"><strong>Calda:</strong> {{ item.selectedCalda.name }}</p>
+
+          <div *ngIf="item.selectedExtras.size > 0">
+            <strong>Extras:</strong>
+            <ul>
+              <li *ngFor="let extraEntry of item.selectedExtras | keyvalue">
+                {{ extraEntry.value.quantity }}x {{ extraEntry.value.extra.name }}
+              </li>
+            </ul>
+          </div>
+
+          <div *ngIf="item.selectedAcompanhamentos.size > 0">
+            <strong>Acompanhamentos:</strong>
+            <ul>
+              <li *ngFor="let acompEntry of item.selectedAcompanhamentos | keyvalue">
+                {{ acompEntry.value.quantity }}x {{ acompEntry.value.topping.name }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="item-total">R$ {{ item.totalPrice.toFixed(2) }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Entrega</h2>
+    <p class="support-text">Opções de entrega aparecerão aqui.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Método de pagamento</h2>
+    <p class="support-text">Opções de pagamento aparecerão aqui.</p>
+  </section>
+
+</div>
+
+<div class="summary-bar">
+  <button class="add-more-btn">Adicionar mais produtos</button>
+  <button class="confirm-btn">Confirmar pedido</button>
+</div>
