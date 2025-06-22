@@ -46,6 +46,11 @@
 </div>
 
 <div class="summary-bar">
-  <button class="add-more-btn">Adicionar mais produtos</button>
-  <button class="confirm-btn">Confirmar pedido</button>
+  <button
+    routerLink="/products"
+    class="add-more-btn"
+  >Adicionar mais produtos
+  </button>
+
+  <button class="confirm-btn" (click)="confirmarPedido()">Confirmar pedido</button>
 </div>

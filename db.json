@@ -1,35 +1,195 @@
 {
   "products": [
-  { "id": 1, "category": "Copos", "name": "Copo 200ml", "price": 8.00, "description": "Dois acompanhamentos", "limit": 2 },
-  { "id": 2, "category": "Copos", "name": "Copo 300ml", "price": 8.00, "description": "Três acompanhamentos", "limit": 3 },
-  { "id": 3, "category": "Barcas", "name": "Barca 500g", "price": 16.00, "description": "até quatro acompanhamentos", "limit": 4 }
-],
+    {
+      "id": "1",
+      "category": "Copos",
+      "name": "Copo 200ml",
+      "price": 8,
+      "description": "Dois acompanhamentos",
+      "limit": 2
+    },
+    {
+      "id": "2",
+      "category": "Copos",
+      "name": "Copo 300ml",
+      "price": 8,
+      "description": "Três acompanhamentos",
+      "limit": 3
+    },
+    {
+      "id": "3",
+      "category": "Barcas",
+      "name": "Barca 500g",
+      "price": 16,
+      "description": "até quatro acompanhamentos",
+      "limit": 4
+    }
+  ],
   "caldas": [
-    { "id": 1, "name": "Açaí" },
-    { "id": 2, "name": "Caramelo" },
-    { "id": 3, "name": "Chocolate" },
-    { "id": 4, "name": "Leite condensado" },
-    { "id": 5, "name": "Limão" },
-    { "id": 6, "name": "Menta" },
-    { "id": 7, "name": "Morango" },
-    { "id": 8, "name": "Uva" }
+    {
+      "id": "1",
+      "name": "Açaí"
+    },
+    {
+      "id": "2",
+      "name": "Caramelo"
+    },
+    {
+      "id": "3",
+      "name": "Chocolate"
+    },
+    {
+      "id": "4",
+      "name": "Leite condensado"
+    },
+    {
+      "id": "5",
+      "name": "Limão"
+    },
+    {
+      "id": "6",
+      "name": "Menta"
+    },
+    {
+      "id": "7",
+      "name": "Morango"
+    },
+    {
+      "id": "8",
+      "name": "Uva"
+    }
   ],
   "extras": [
-    { "id": 101, "name": "Bis", "price": 2.00 },
-    { "id": 102, "name": "Bombom", "price": 2.00 },
-    { "id": 103, "name": "Confete", "price": 2.00 },
-    { "id": 104, "name": "Gotas chocolate", "price": 2.00 },
-    { "id": 105, "name": "KitKat", "price": 4.00 },
-    { "id": 106, "name": "Kiwi", "price": 2.00 },
-    { "id": 107, "name": "Morango", "price": 5.00 }
+    {
+      "id": "101",
+      "name": "Bis",
+      "price": 2
+    },
+    {
+      "id": "102",
+      "name": "Bombom",
+      "price": 2
+    },
+    {
+      "id": "103",
+      "name": "Confete",
+      "price": 2
+    },
+    {
+      "id": "104",
+      "name": "Gotas chocolate",
+      "price": 2
+    },
+    {
+      "id": "105",
+      "name": "KitKat",
+      "price": 4
+    },
+    {
+      "id": "106",
+      "name": "Kiwi",
+      "price": 2
+    },
+    {
+      "id": "107",
+      "name": "Morango",
+      "price": 5
+    }
   ],
   "acompanhamentos": [
-    { "id": 201, "name": "Farinha láctea" },
-    { "id": 202, "name": "Flocos de Arroz" },
-    { "id": 203, "name": "Granola" },
-    { "id": 204, "name": "Granulado" },
-    { "id": 205, "name": "Leite em pó" },
-    { "id": 206, "name": "Ovomaltine" },
-    { "id": 207, "name": "Paçoca" }
+    {
+      "id": "201",
+      "name": "Farinha láctea"
+    },
+    {
+      "id": "202",
+      "name": "Flocos de Arroz"
+    },
+    {
+      "id": "203",
+      "name": "Granola"
+    },
+    {
+      "id": "204",
+      "name": "Granulado"
+    },
+    {
+      "id": "205",
+      "name": "Leite em pó"
+    },
+    {
+      "id": "206",
+      "name": "Ovomaltine"
+    },
+    {
+      "id": "207",
+      "name": "Paçoca"
+    }
+  ],
+  "orders": [
+    {
+      "id": "edaf",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "category": "Copos",
+            "name": "Copo 200ml",
+            "price": 8,
+            "description": "Dois acompanhamentos",
+            "limit": 2
+          },
+          "selectedCalda": {
+            "id": "1",
+            "name": "Açaí"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 14
+        },
+        {
+          "product": {
+            "id": "3",
+            "category": "Barcas",
+            "name": "Barca 500g",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": {
+            "id": "2",
+            "name": "Caramelo"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 25
+        }
+      ],
+      "grandTotal": 39,
+      "orderDate": "2025-06-22T00:13:42.207Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "9ee3",
+      "items": [
+        {
+          "product": {
+            "id": "3",
+            "category": "Barcas",
+            "name": "Barca 500g",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": null,
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 16
+        }
+      ],
+      "grandTotal": 16,
+      "orderDate": "2025-06-22T02:03:46.487Z",
+      "status": "Confirmado"
+    }
   ]
 }

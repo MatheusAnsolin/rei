@@ -5,6 +5,7 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import {ProductCustomizationComponent} from './pages/product-customization/product-customization.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import {OrderConfirmationComponent} from './pages/order-confirmation/order-confirmation.component';
 
 
 export const routes: Routes = [
@@ -15,7 +16,9 @@ export const routes: Routes = [
       { path: 'products', component: ProductListComponent },
       { path: 'product/:id', component: ProductDetailComponent },
       // Redirecionamento padrão vai para a lista de produtos
-      { path: '', redirectTo: '/products', pathMatch: 'full' }
+      { path: '', redirectTo: '/products', pathMatch: 'full' },
+      { path: 'order-confirmation/:id', component: OrderConfirmationComponent }
+
     ]
   },
 
