@@ -4,6 +4,7 @@
       "id": "1",
       "category": "Copos",
       "name": "Copo 200ml",
+      "imageUrl": "assets/acai.png",
       "price": 8,
       "description": "Dois acompanhamentos",
       "limit": 2
@@ -12,14 +13,48 @@
       "id": "2",
       "category": "Copos",
       "name": "Copo 300ml",
-      "price": 8,
+      "imageUrl": "assets/acai.png",
+      "price": 13,
       "description": "Três acompanhamentos",
       "limit": 3
     },
     {
       "id": "3",
+      "category": "Copos",
+      "name": "Copo 500ml",
+      "imageUrl": "assets/acai.png",
+      "price": 18,
+      "description": "Três acompanhamentos",
+      "limit": 3
+    },
+    {
+      "id": "4",
       "category": "Barcas",
       "name": "Barca 500g",
+      "price": 16,
+      "description": "até quatro acompanhamentos",
+      "limit": 4
+    },
+    {
+      "id": "5",
+      "category": "Barcas",
+      "name": "Barca 700g",
+      "price": 16,
+      "description": "até quatro acompanhamentos",
+      "limit": 4
+    },
+    {
+      "id": "6",
+      "category": "Sorvetes",
+      "name": "Sorvete 1L",
+      "price": 16,
+      "description": "até quatro acompanhamentos",
+      "limit": 4
+    },
+    {
+      "id": "7",
+      "category": "Sorvetes",
+      "name": "Sorvete 1L",
       "price": 16,
       "description": "até quatro acompanhamentos",
       "limit": 4
@@ -189,6 +224,283 @@
       ],
       "grandTotal": 16,
       "orderDate": "2025-06-22T02:03:46.487Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "293b",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "category": "Copos",
+            "name": "Copo 200ml",
+            "price": 8,
+            "description": "Dois acompanhamentos",
+            "limit": 2
+          },
+          "selectedCalda": {
+            "id": "6",
+            "name": "Menta"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 12
+        }
+      ],
+      "grandTotal": 12,
+      "orderDate": "2025-06-22T02:07:49.315Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "33a0",
+      "items": [
+        {
+          "product": {
+            "id": "3",
+            "category": "Barcas",
+            "name": "Barca 500g",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": {
+            "id": "4",
+            "name": "Leite condensado"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 23
+        },
+        {
+          "product": {
+            "id": "2",
+            "category": "Copos",
+            "name": "Copo 300ml",
+            "price": 8,
+            "description": "Três acompanhamentos",
+            "limit": 3
+          },
+          "selectedCalda": {
+            "id": "2",
+            "name": "Caramelo"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 8
+        }
+      ],
+      "grandTotal": 31,
+      "orderDate": "2025-06-22T02:09:01.513Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "fa16",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "category": "Copos",
+            "name": "Copo 200ml",
+            "price": 8,
+            "description": "Dois acompanhamentos",
+            "limit": 2
+          },
+          "selectedCalda": {
+            "id": "1",
+            "name": "Açaí"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 12
+        },
+        {
+          "product": {
+            "id": "3",
+            "category": "Barcas",
+            "name": "Barca 500g",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": {
+            "id": "5",
+            "name": "Limão"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 20
+        }
+      ],
+      "grandTotal": 32,
+      "orderDate": "2025-06-23T01:52:41.811Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "0591",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "category": "Copos",
+            "name": "Copo 200ml",
+            "price": 8,
+            "description": "Dois acompanhamentos",
+            "limit": 2
+          },
+          "selectedCalda": {
+            "id": "5",
+            "name": "Limão"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 14
+        },
+        {
+          "product": {
+            "id": "2",
+            "category": "Copos",
+            "name": "Copo 300ml",
+            "price": 8,
+            "description": "Três acompanhamentos",
+            "limit": 3
+          },
+          "selectedCalda": {
+            "id": "6",
+            "name": "Menta"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 10
+        }
+      ],
+      "grandTotal": 24,
+      "orderDate": "2025-06-23T01:53:49.631Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "4fad",
+      "items": [
+        {
+          "product": {
+            "id": "4",
+            "category": "Barcas",
+            "name": "Barca 500g",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": {
+            "id": "2",
+            "name": "Caramelo"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 18
+        }
+      ],
+      "grandTotal": 18,
+      "orderDate": "2025-06-23T02:42:03.092Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "972d",
+      "items": [
+        {
+          "product": {
+            "id": "6",
+            "category": "Sorvetes",
+            "name": "Sorvete 1L",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": null,
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 20
+        },
+        {
+          "product": {
+            "id": "7",
+            "category": "Sorvetes",
+            "name": "Sorvete 1L",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": null,
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 16
+        }
+      ],
+      "grandTotal": 36,
+      "orderDate": "2025-06-27T01:06:37.073Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "7790",
+      "items": [
+        {
+          "product": {
+            "id": "6",
+            "category": "Sorvetes",
+            "name": "Sorvete 1L",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": null,
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 16
+        }
+      ],
+      "grandTotal": 16,
+      "orderDate": "2025-06-27T01:38:16.706Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "51f4",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "category": "Copos",
+            "name": "Copo 200ml",
+            "imageUrl": "../public/acai.png",
+            "price": 8,
+            "description": "Dois acompanhamentos",
+            "limit": 2
+          },
+          "selectedCalda": {
+            "id": "1",
+            "name": "Açaí"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 12
+        },
+        {
+          "product": {
+            "id": "4",
+            "category": "Barcas",
+            "name": "Barca 500g",
+            "price": 16,
+            "description": "até quatro acompanhamentos",
+            "limit": 4
+          },
+          "selectedCalda": {
+            "id": "1",
+            "name": "Açaí"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 16
+        }
+      ],
+      "grandTotal": 28,
+      "orderDate": "2025-06-28T20:33:41.667Z",
       "status": "Confirmado"
     }
   ]

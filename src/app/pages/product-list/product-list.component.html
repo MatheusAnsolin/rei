@@ -3,7 +3,12 @@
     <h2 class="section-title">{{ group.category }}</h2>
 
     <div class="products-scroll-container">
-      <a class="product-card-horizontal" *ngFor="let product of group.products" [routerLink]="['/product', product.id]">
+      <a class="product-card-horizontal"
+         *ngFor="let product of group.products"
+         [routerLink]="['/product', product.id]">
+        <img class="product-image"
+             [ngSrc]= "product.imageUrl || 'assets/placeholder.png'"
+             width="100" height="100"  alt={{product.name}}/>
         <p class="item-name">{{ product.name }}</p>
         <p class="support-text">R$ {{ product.price.toFixed(2) }}</p>
       </a>

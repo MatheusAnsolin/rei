@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.interface';
 import { RouterModule } from '@angular/router';
@@ -13,7 +13,7 @@ export interface ProductGroup {
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgOptimizedImage],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
