@@ -502,6 +502,58 @@
       "grandTotal": 28,
       "orderDate": "2025-06-28T20:33:41.667Z",
       "status": "Confirmado"
+    },
+    {
+      "id": "645f",
+      "items": [
+        {
+          "product": {
+            "id": "3",
+            "category": "Copos",
+            "name": "Copo 500ml",
+            "imageUrl": "assets/acai.png",
+            "price": 18,
+            "description": "Três acompanhamentos",
+            "limit": 3
+          },
+          "selectedCalda": {
+            "id": "1",
+            "name": "Açaí"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 22
+        }
+      ],
+      "grandTotal": 22,
+      "orderDate": "2025-10-28T09:38:16.867Z",
+      "status": "Confirmado"
+    },
+    {
+      "id": "b282",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "category": "Copos",
+            "name": "Copo 200ml",
+            "imageUrl": "assets/acai.png",
+            "price": 8,
+            "description": "Dois acompanhamentos",
+            "limit": 2
+          },
+          "selectedCalda": {
+            "id": "1",
+            "name": "Açaí"
+          },
+          "selectedExtras": {},
+          "selectedAcompanhamentos": {},
+          "totalPrice": 12
+        }
+      ],
+      "grandTotal": 12,
+      "orderDate": "2025-10-30T21:33:04.296Z",
+      "status": "Confirmado"
     }
   ]
 }

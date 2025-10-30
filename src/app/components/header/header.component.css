@@ -10,7 +10,24 @@
   box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
-.logo-container h1 {
+img{
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 40%;
+  align-items: center;
+  border: 2px solid white;
+  display: block;
+}
+.logo-container {
+  display: block;
+  height: 60px;
+  border: 2px solid white;
+}
+
+  h1 {
+    display: block;
   margin: 0;
   font-size: 20pt;
+
 }
