@@ -61,5 +61,10 @@
 <div *ngIf="product" class="summary-bar">
   <span>Total</span>
   <span class="total-price">R$ {{ totalPrice.toFixed(2) }}</span>
-  <button class="confirm-btn" (click)="confirmarProduto()">Confirmar</button>
+  <button class="confirm-btn" (click)="confirmarProduto()">🛒 Adicionar ao Carrinho</button>
+</div>
+
+<!-- Feedback de sucesso -->
+<div class="toast" *ngIf="showSuccessToast">
+  ✓ Produto adicionado ao carrinho!
 </div>

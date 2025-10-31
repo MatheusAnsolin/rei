@@ -1,56 +1,97 @@
 <div class="page-container">
-  <h1 class="screen-title">Finalizar pedido</h1>
+  <h1 class="screen-title">🛒 Finalizar pedido</h1>
 
-  <section>
-    <h2 class="section-title">Resumo do pedido</h2>
+  <!-- Mensagem para carrinho vazio -->
+  <div class="empty-cart" *ngIf="(cartItems$ | async)?.length === 0">
+    <div class="empty-cart-icon">🛒</div>
+    <h2>Seu carrinho está vazio</h2>
+    <p>Adicione produtos deliciosos ao seu pedido!</p>
+    <button routerLink="/products" class="btn-primary">Ver Produtos</button>
+  </div>
 
-    <div class="cart-items-list" *ngIf="(cartItems$ | async) as items">
-      <div class="cart-item-card" *ngFor="let item of items">
-        <p class="item-name">{{ item.product.name }}</p>
-        <div class="item-details">
-          <p *ngIf="item.selectedCalda"><strong>Calda:</strong> {{ item.selectedCalda.name }}</p>
+  <!-- Conteúdo do carrinho -->
+  <div *ngIf="(cartItems$ | async)?.length! > 0">
+    <section>
+      <h2 class="section-title">Resumo do pedido</h2>
 
-          <div *ngIf="item.selectedExtras.size > 0">
-            <strong>Extras:</strong>
-            <ul>
-              <li *ngFor="let extraEntry of item.selectedExtras | keyvalue">
-                {{ extraEntry.value.quantity }}x {{ extraEntry.value.extra.name }}
-              </li>
-            </ul>
+      <div class="cart-items-list">
+        <div class="cart-item-card" *ngFor="let item of cartItems; let i = index">
+          <div class="item-header">
+            <div class="item-info">
+              <p class="item-name">{{ item.product.name }}</p>
+              <p class="item-base-price">R$ {{ item.product.price.toFixed(2) }}</p>
+            </div>
+            <button class="remove-btn" (click)="removeItem(i)" title="Remover item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+              </svg>
+            </button>
           </div>
 
-          <div *ngIf="item.selectedAcompanhamentos.size > 0">
-            <strong>Acompanhamentos:</strong>
-            <ul>
-              <li *ngFor="let acompEntry of item.selectedAcompanhamentos | keyvalue">
-                {{ acompEntry.value.quantity }}x {{ acompEntry.value.topping.name }}
-              </li>
-            </ul>
+          <div class="item-details">
+            <div *ngIf="item.selectedCalda" class="detail-item">
+              <span class="detail-label">🍫 Calda:</span>
+              <span>{{ item.selectedCalda.name }}</span>
+            </div>
+
+            <div *ngIf="item.selectedExtras.size > 0" class="detail-item">
+              <span class="detail-label">✨ Extras:</span>
+              <ul class="items-list">
+                <li *ngFor="let extra of getExtrasArray(item.selectedExtras)">
+                  {{ extra.quantity }}x {{ extra.extra.name }}
+                  <span class="extra-price">(+R$ {{ (extra.extra.price * extra.quantity).toFixed(2) }})</span>
+                </li>
+              </ul>
+            </div>
+
+            <div *ngIf="item.selectedAcompanhamentos.size > 0" class="detail-item">
+              <span class="detail-label">🍓 Acompanhamentos:</span>
+              <ul class="items-list">
+                <li *ngFor="let acomp of getAcompanhamentosArray(item.selectedAcompanhamentos)">
+                  {{ acomp.quantity }}x {{ acomp.topping.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item-footer">
+            <span class="item-total-label">Total do item:</span>
+            <span class="item-total">R$ {{ item.totalPrice.toFixed(2) }}</span>
           </div>
         </div>
-        <p class="item-total">R$ {{ item.totalPrice.toFixed(2) }}</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2 class="section-title">Entrega</h2>
-    <p class="support-text">Opções de entrega aparecerão aqui.</p>
-  </section>
+    <section class="total-section">
+      <div class="grand-total">
+        <span class="total-label">Total do pedido:</span>
+        <span class="total-value">R$ {{ (cartTotal$ | async)?.toFixed(2) }}</span>
+      </div>
+    </section>
 
-  <section>
-    <h2 class="section-title">Método de pagamento</h2>
-    <p class="support-text">Opções de pagamento aparecerão aqui.</p>
-  </section>
+    <section>
+      <h2 class="section-title">📍 Entrega</h2>
+      <p class="support-text">Opções de entrega aparecerão aqui.</p>
+    </section>
 
+    <section>
+      <h2 class="section-title">💳 Método de pagamento</h2>
+      <p class="support-text">Opções de pagamento aparecerão aqui.</p>
+    </section>
+  </div>
 </div>
 
-<div class="summary-bar">
+<div class="summary-bar" *ngIf="(cartItems$ | async)?.length! > 0">
   <button
     routerLink="/products"
     class="add-more-btn"
-  >Adicionar mais produtos
+  >+ Adicionar mais produtos
   </button>
 
-  <button class="confirm-btn" (click)="confirmarPedido()">Confirmar pedido</button>
+  <button class="confirm-btn" (click)="confirmarPedido()">
+    Confirmar pedido (R$ {{ (cartTotal$ | async)?.toFixed(2) }})
+  </button>
 </div>

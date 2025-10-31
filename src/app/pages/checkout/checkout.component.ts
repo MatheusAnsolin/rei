@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { Order } from '../../models/order.interface';
-import { take } from 'rxjs';
 
 
 @Component({
@@ -18,35 +17,39 @@ import { take } from 'rxjs';
 })
 export class CheckoutComponent implements OnInit {
   cartItems$: Observable<CartItem[]>;
-  currentCartItems: CartItem[] = []; // Para guardar o valor atual do carrinho
+  cartTotal$: Observable<number>;
+  cartItems: CartItem[] = [];
 
   constructor(
     private cartService: CartService,
-    private router: Router // Injetar o Router
+    private router: Router
   ) {
     this.cartItems$ = this.cartService.cartItems$;
+    this.cartTotal$ = this.cartService.cartTotal$;
   }
 
   ngOnInit(): void {
-    // Guarda o valor mais recente do carrinho para usar na hora de confirmar
-    this.cartItems$.pipe(take(1)).subscribe(items => {
-      this.currentCartItems = items;
+    // Subscreve para manter os itens atualizados
+    this.cartItems$.subscribe(items => {
+      this.cartItems = items;
     });
   }
 
-  get grandTotal(): number {
-    return this.currentCartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+  removeItem(index: number): void {
+    if (confirm('Deseja remover este item do carrinho?')) {
+      this.cartService.removeFromCart(index);
+    }
   }
 
   confirmarPedido(): void {
-    if (this.currentCartItems.length === 0) {
+    if (this.cartItems.length === 0) {
       alert("Seu carrinho está vazio!");
       return;
     }
 
     const newOrder: Order = {
-      items: this.currentCartItems,
-      grandTotal: this.grandTotal,
+      items: this.cartItems,
+      grandTotal: this.cartService.getCartTotal(),
       orderDate: new Date(),
       status: 'Confirmado'
     };
@@ -63,5 +66,14 @@ export class CheckoutComponent implements OnInit {
         alert('Houve um erro ao processar seu pedido. Tente novamente.');
       }
     });
+  }
+
+  // Métodos auxiliares para o template
+  getExtrasArray(extras: Map<number, { extra: any, quantity: number }>): Array<{ extra: any, quantity: number }> {
+    return Array.from(extras.values());
+  }
+
+  getAcompanhamentosArray(acompanhamentos: Map<number, { topping: any, quantity: number }>): Array<{ topping: any, quantity: number }> {
+    return Array.from(acompanhamentos.values());
   }
 }

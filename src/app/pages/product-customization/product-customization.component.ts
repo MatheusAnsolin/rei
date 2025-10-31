@@ -149,6 +149,9 @@ export class ProductCustomizationComponent implements OnInit {
   get totalItemsSelecionados(): number {
     return this.totalExtras + this.totalAcompanhamentos;
   }
+
+  showSuccessToast = false;
+
   confirmarProduto(): void {
     if (!this.product) return;
 
@@ -164,8 +167,13 @@ export class ProductCustomizationComponent implements OnInit {
     // 2. Adiciona o item ao serviço do carrinho
     this.cartService.addToCart(cartItem);
 
-    // 3. Navega para a próxima tela (que vamos criar agora)
-    this.router.navigate(['/checkout']);
+    // 3. Mostra feedback de sucesso
+    this.showSuccessToast = true;
+    setTimeout(() => {
+      this.showSuccessToast = false;
+      // 4. Navega para a lista de produtos
+      this.router.navigate(['/products']);
+    }, 1500);
   }
 
 }
